@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>SensorDemo/SensorEB-PRO</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>220</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+    <Build><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Debug-Log</Factory></Window><Window><Factory>Find-in-Files</Factory></Window></Windows></PreferedWindows><ColumnWidth0>20</ColumnWidth0><ColumnWidth1>1194</ColumnWidth1><ColumnWidth2>244</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build><TerminalIO/><Debug-Log><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window><Window><Factory>Find-in-Files</Factory></Window></Windows></PreferedWindows></Debug-Log><Find-in-Files><ColumnWidth0>579</ColumnWidth0><ColumnWidth1>62</ColumnWidth1><ColumnWidth2>754</ColumnWidth2><PreferedWindows><Position>3</Position><ScreenPosX>0</ScreenPosX><ScreenPosY>0</ScreenPosY><Windows><Window><Factory>Build</Factory></Window><Window><Factory>Debug-Log</Factory></Window></Windows></PreferedWindows></Find-in-Files></Static>
+    <Windows>
+      
+    <Wnd2>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-22587-32072</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>SensorDemo</ExpandedNode><ExpandedNode>SensorDemo/App</ExpandedNode><ExpandedNode>SensorDemo/MAC</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd2><Wnd3><Tabs><Tab><Identity>TabID-16265-18113</Identity><TabName>Build</TabName><Factory>Build</Factory><Session/></Tab></Tabs><SelectedTab>0</SelectedTab></Wnd3></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\stack\sapi\sapi.c</Filename><XPos>0</XPos><YPos>692</YPos><SelStart>24643</SelStart><SelEnd>24667</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\stack\sapi\sapi.h</Filename><XPos>0</XPos><YPos>374</YPos><SelStart>16983</SelStart><SelEnd>17007</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\hal\target\CC2530EB\hal_led.c</Filename><XPos>0</XPos><YPos>447</YPos><SelStart>14888</SelStart><SelEnd>14888</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\osal\mcu\cc2530\OSAL_Nv.c</Filename><XPos>1</XPos><YPos>716</YPos><SelStart>22250</SelStart><SelEnd>22250</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\COMPONENTS\HAL\TARGET\CC2530EB\hal_types.h</Filename><XPos>0</XPos><YPos>34</YPos><SelStart>2717</SelStart><SelEnd>2722</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\osal\common\OSAL.c</Filename><XPos>0</XPos><YPos>767</YPos><SelStart>20796</SelStart><SelEnd>20796</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\stack\af\AF.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>7364</SelStart><SelEnd>7364</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\hal\target\CC2530EB\hal_uart.c</Filename><XPos>0</XPos><YPos>169</YPos><SelStart>6079</SelStart><SelEnd>6079</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\hal\target\CC2530EB\_hal_uart_dma.c</Filename><XPos>0</XPos><YPos>676</YPos><SelStart>21208</SelStart><SelEnd>21208</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Program Files\IAR Systems\Embedded Workbench 5.3\8051\inc\ioCC2530.h</Filename><XPos>0</XPos><YPos>735</YPos><SelStart>39476</SelStart><SelEnd>39476</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\osal\include\OSAL.h</Filename><XPos>0</XPos><YPos>69</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\hal\include\hal_uart.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Components\hal\target\CC2530EB\hal_mcu.h</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>648</SelStart><SelEnd>648</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\ZMain\TI2530DB\OnBoard.h</Filename><XPos>0</XPos><YPos>130</YPos><SelStart>5637</SelStart><SelEnd>5637</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\ZMain\TI2530DB\ZMain.c</Filename><XPos>0</XPos><YPos>104</YPos><SelStart>4076</SelStart><SelEnd>4076</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Users\&#x5BC6;&#x7801;\Desktop\&#x535A;&#x521B;&#x53C2;&#x8D5B;&#x51C6;&#x5907;&#x6587;&#x4eF6;\2015&#x535A;&#x521B;&#x4F5C;&#x54C1;&#x8BBe;&#x8BA1;&#x62A5;&#x544A;-LJ\&#x6e90;&#x7A0B;&#x5e8F;\zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\MPU6050Demosenso\Source\DemoSensor.c</Filename><XPos>0</XPos><YPos>87</YPos><SelStart>0</SelStart><SelEnd>0</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>C:\Users\&#x5BC6;&#x7801;\Desktop\&#x535A;&#x521B;&#x53C2;&#x8D5B;&#x51C6;&#x5907;&#x6587;&#x4eF6;\2015&#x535A;&#x521B;&#x4F5C;&#x54C1;&#x8BBe;&#x8BA1;&#x62A5;&#x544A;-LJ\&#x6e90;&#x7A0B;&#x5e8F;\zigbee\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\MPU6050Demosenso\Source\DemoCollector.c</Filename><XPos>0</XPos><YPos>0</YPos><SelStart>809</SelStart><SelEnd>809</SelEnd></Tab><ActiveTab>16</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01c1cca8><key>iaridepm.enu1</key></Toolbar-01c1cca8></Sizes></Row0></Top><Left><Row0><Sizes><Wnd2><Rect><Top>-2</Top><Left>-2</Left><Bottom>521</Bottom><Right>311</Right><x>-2</x><y>-2</y><xscreen>-2250525</xscreen><yscreen>-1393683</yscreen><sizeHorzCX>-2147447518</sizeHorzCX><sizeHorzCY>-2147431432</sizeHorzCY><sizeVertCX>298664</sizeVertCX><sizeVertCY>805855</sizeVertCY></Rect></Wnd2></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd3><Rect><Top>-2</Top><Left>-2</Left><Bottom>83</Bottom><Right>1050</Right><x>-2</x><y>-2</y><xscreen>1052</xscreen><yscreen>85</yscreen><sizeHorzCX>1003817</sizeHorzCX><sizeHorzCY>130971</sizeHorzCY><sizeVertCX>190840</sizeVertCX><sizeVertCY>309707</sizeVertCY></Rect></Wnd3></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

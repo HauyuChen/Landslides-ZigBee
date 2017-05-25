@@ -1,0 +1,2195 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.51A/W32 for 8051                28/Oct/2013  22:12:37 #
+# Copyright 2004-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530test\Projects\zs #
+#                          tack\Samples\SensorDemo\Source\MPU6050.c           #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530test\Project #
+#                          s\zstack\Samples\SensorDemo\CC2530DB\..\..\..\Tool #
+#                          s\CC2530DB\f8wCoord.cfg" (-DCPU32MHZ               #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DZDO_COORDINATOR -DRTR_NWK -DBLINK_LEDS) -f     #
+#                          "C:\Texas Instruments\ZStack-CC2530test\Projects\z #
+#                          stack\Samples\SensorDemo\CC2530DB\..\..\..\Tools\C #
+#                          C2530DB\f8wConfig.cfg" (-DSECURE=0                 #
+#                          -DZG_SECURE_DYNAMIC=0 -DREFLECTOR                  #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Texas Instruments\ZStack-CC2530test\Projects\z #
+#                          stack\Samples\SensorDemo\Source\MPU6050.c" -D      #
+#                          ZIGBEEPRO -D HOLD_AUTO_START -D BUILD_ALL_DEVICES  #
+#                          -D REFLECTOR -D NV_INIT -D NV_RESTORE -D ZTOOL_P1  #
+#                          -D MT_TASK -D DEVICE_LOGICAL_TYPE=ZG_DEVICETYPE_RO #
+#                          UTER -D LCD_SUPPORTED -D MY_TYPE_COLLECTOR -lC     #
+#                          "C:\Texas Instruments\ZStack-CC2530test\Projects\z #
+#                          stack\Samples\SensorDemo\CC2530DB\CollectorEB-PRO\ #
+#                          List\" -lA "C:\Texas Instruments\ZStack-CC2530test #
+#                          \Projects\zstack\Samples\SensorDemo\CC2530DB\Colle #
+#                          ctorEB-PRO\List\" --diag_suppress Pe001,Pa010 -o   #
+#                          "C:\Texas Instruments\ZStack-CC2530test\Projects\z #
+#                          stack\Samples\SensorDemo\CC2530DB\CollectorEB-PRO\ #
+#                          Obj\" -e --require_prototypes --debug              #
+#                          --core=plain --dptr=16,1 --data_model=large        #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I "C:\Texas                  #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\SOURCE\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\ZMAIN\TI2530DB\"  #
+#                          -I "C:\Texas Instruments\ZStack-CC2530test\Project #
+#                          s\zstack\Samples\SensorDemo\CC2530DB\..\..\..\..\. #
+#                          .\COMPONENTS\MT\" -I "C:\Texas                     #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          HAL\INCLUDE\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          HAL\TARGET\CC2530EB\" -I "C:\Texas                 #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          OSAL\MCU\CCSOC\" -I "C:\Texas                      #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          OSAL\INCLUDE\" -I "C:\Texas                        #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\AF\" -I "C:\Texas Instruments\ZStack-CC2530t #
+#                          est\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\STACK\NWK\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SEC\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SAPI\" -I "C:\Texas                          #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\SYS\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          STACK\ZDO\" -I "C:\Texas                           #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          ZMAC\F8W\" -I "C:\Texas Instruments\ZStack-CC2530t #
+#                          est\Projects\zstack\Samples\SensorDemo\CC2530DB\.. #
+#                          \..\..\..\..\COMPONENTS\ZMAC\" -I "C:\Texas        #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          SERVICES\SADDR\" -I "C:\Texas                      #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          SERVICES\SDATA\" -I "C:\Texas                      #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          MAC\INCLUDE\" -I "C:\Texas                         #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          MAC\HIGH_LEVEL\" -I "C:\Texas                      #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          MAC\LOW_LEVEL\srf04\" -I "C:\Texas                 #
+#                          Instruments\ZStack-CC2530test\Projects\zstack\Samp #
+#                          les\SensorDemo\CC2530DB\..\..\..\..\..\COMPONENTS\ #
+#                          MAC\LOW_LEVEL\srf04\SINGLE_CHIP\" -I "C:\Program   #
+#                          Files\IAR Systems\Embedded Workbench               #
+#                          5.3\8051\INC\" -I "C:\Program Files\IAR            #
+#                          Systems\Embedded Workbench 5.3\8051\INC\CLIB\"     #
+#                          -Ohz                                               #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530test\Projects\zs #
+#                          tack\Samples\SensorDemo\CC2530DB\CollectorEB-PRO\L #
+#                          ist\MPU6050.lst                                    #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530test\Projects\zs #
+#                          tack\Samples\SensorDemo\CC2530DB\CollectorEB-PRO\O #
+#                          bj\MPU6050.r51                                     #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530test\Projects\zstack\Samples\SensorDemo\Source\MPU6050.c
+      1          #include  "hal_types.h"
+      2          #include  "hal_mcu.h"
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x90
+   \   union <unnamed> volatile __sfr _A_P1
+   \                     _A_P1:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfe
+   \   unsigned char volatile __sfr P1DIR
+   \                     P1DIR:
+   \   000000                DS 1
+      3          #include  "MPU6050.h"
+      4          
+      5          
+      6          
+      7          
+      8          uint8 _Read(void);
+      9          void _Start(void);
+     10          void _Stop(void);
+     11          void _Port_Init(void);
+     12          uint8 _Wait_ACK(void);
+     13          uint8 _Write(uint8 data);
+     14          uint8 _Write_Data(uint8 addr,uint8 wd);//数据写入
+     15          uint8 _Read_Data(uint8 addr);//数据读出
+     16          void  _MPU_Init(void);
+     17          void sendACK(uint8 ack);
+     18          void lcd_printf(uint8 *s,int16 temp_data);
+     19          uint8 RecvACK();
+     20          int16 GetData(uint8 REG_Address);
+     21          
+     22          //SCL为高电平时，SDA发生高到低跳变
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     23          void _Start(void)
+   \                     _Start:
+     24          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     25              _SDA_1;
+   \   000000   43FE10       ORL     0xfe,#0x10
+   \   000003   D294         SETB    0x90.4
+     26              _SCL_1;
+   \   000005   12....       LCALL   ?Subroutine1 & 0xFFFF
+     27               NOP();
+     28              _SDA_0;
+   \                     ??CrossCallReturnLabel_0:
+   \   000008   C294         CLR     0x90.4
+     29               NOP();
+   \   00000A   12....       LCALL   ??Subroutine9_0 & 0xFFFF
+     30              _SCL_0;
+     31               NOP();
+     32          }
+   \                     ??CrossCallReturnLabel_11:
+   \   00000D   02....       LJMP    ?BRET
+   \   000010                REQUIRE _A_P0
+   \   000010                REQUIRE _A_P1
+   \   000010                REQUIRE P0DIR
+   \   000010                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000003   43FE10       ORL     0xfe,#0x10
+   \   000006   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   43FD02       ORL     0xfd,#0x2
+   \   000003   D281         SETB    0x80.1
+   \   000005                REQUIRE ?Subroutine7
+   \   000005                ; // Fall through to label ?Subroutine7
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   00           NOP
+   \   000001   00           NOP
+   \   000002   00           NOP
+   \   000003   00           NOP
+   \   000004   00           NOP
+   \   000005   00           NOP
+   \   000006   00           NOP
+   \   000007   00           NOP
+   \   000008   00           NOP
+   \   000009   00           NOP
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+   \   00000C   00           NOP
+   \   00000D   00           NOP
+   \   00000E   00           NOP
+   \   00000F   00           NOP
+   \   000010   00           NOP
+   \   000011   00           NOP
+   \   000012   00           NOP
+   \   000013   00           NOP
+   \   000014   00           NOP
+   \   000015   00           NOP
+   \   000016   00           NOP
+   \   000017   00           NOP
+   \   000018   00           NOP
+   \   000019   00           NOP
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+   \   00001C   00           NOP
+   \   00001D   00           NOP
+   \   00001E   00           NOP
+   \   00001F   00           NOP
+   \   000020   00           NOP
+   \   000021   00           NOP
+   \   000022   00           NOP
+   \   000023   00           NOP
+   \   000024   00           NOP
+   \   000025   00           NOP
+   \   000026   00           NOP
+   \   000027   00           NOP
+   \   000028   00           NOP
+   \   000029   00           NOP
+   \   00002A   00           NOP
+   \   00002B   00           NOP
+   \   00002C   00           NOP
+   \   00002D   00           NOP
+   \   00002E   00           NOP
+   \   00002F   00           NOP
+   \   000030   00           NOP
+   \   000031   00           NOP
+   \   000032   00           NOP
+   \   000033   00           NOP
+   \   000034   00           NOP
+   \   000035   00           NOP
+   \   000036   00           NOP
+   \   000037   00           NOP
+   \   000038   00           NOP
+   \   000039   00           NOP
+   \   00003A   00           NOP
+   \   00003B   00           NOP
+   \   00003C   00           NOP
+   \   00003D   00           NOP
+   \   00003E   00           NOP
+   \   00003F   00           NOP
+   \   000040   00           NOP
+   \   000041   00           NOP
+   \   000042   00           NOP
+   \   000043   00           NOP
+   \   000044   00           NOP
+   \   000045   00           NOP
+   \   000046   00           NOP
+   \   000047   00           NOP
+   \   000048   00           NOP
+   \   000049   00           NOP
+   \   00004A   00           NOP
+   \   00004B   00           NOP
+   \   00004C   00           NOP
+   \   00004D   00           NOP
+   \   00004E   00           NOP
+   \   00004F   00           NOP
+   \   000050   00           NOP
+   \   000051   00           NOP
+   \   000052   00           NOP
+   \   000053   00           NOP
+   \   000054   00           NOP
+   \   000055   00           NOP
+   \   000056   00           NOP
+   \   000057   00           NOP
+   \   000058   00           NOP
+   \   000059   00           NOP
+   \   00005A   00           NOP
+   \   00005B   00           NOP
+   \   00005C   00           NOP
+   \   00005D   00           NOP
+   \   00005E   00           NOP
+   \   00005F   00           NOP
+   \   000060   00           NOP
+   \   000061   00           NOP
+   \   000062   00           NOP
+   \   000063   00           NOP
+   \   000064   00           NOP
+   \   000065   00           NOP
+   \   000066   00           NOP
+   \   000067   00           NOP
+   \   000068   00           NOP
+   \   000069   00           NOP
+   \   00006A   00           NOP
+   \   00006B   00           NOP
+   \   00006C   00           NOP
+   \   00006D   00           NOP
+   \   00006E   00           NOP
+   \   00006F   00           NOP
+   \   000070   00           NOP
+   \   000071   00           NOP
+   \   000072   00           NOP
+   \   000073   00           NOP
+   \   000074   00           NOP
+   \   000075   00           NOP
+   \   000076   00           NOP
+   \   000077   00           NOP
+   \   000078   00           NOP
+   \   000079   00           NOP
+   \   00007A   00           NOP
+   \   00007B   00           NOP
+   \   00007C   00           NOP
+   \   00007D   00           NOP
+   \   00007E   00           NOP
+   \   00007F   00           NOP
+   \   000080   00           NOP
+   \   000081   00           NOP
+   \   000082   00           NOP
+   \   000083   00           NOP
+   \   000084   00           NOP
+   \   000085   00           NOP
+   \   000086   00           NOP
+   \   000087   00           NOP
+   \   000088   00           NOP
+   \   000089   00           NOP
+   \   00008A   00           NOP
+   \   00008B   00           NOP
+   \   00008C   00           NOP
+   \   00008D   00           NOP
+   \   00008E   00           NOP
+   \   00008F   00           NOP
+   \   000090   00           NOP
+   \   000091   00           NOP
+   \   000092   00           NOP
+   \   000093   00           NOP
+   \   000094   00           NOP
+   \   000095   00           NOP
+   \   000096   00           NOP
+   \   000097   00           NOP
+   \   000098   00           NOP
+   \   000099   00           NOP
+   \   00009A   00           NOP
+   \   00009B   00           NOP
+   \   00009C   00           NOP
+   \   00009D   00           NOP
+   \   00009E   00           NOP
+   \   00009F   00           NOP
+   \   0000A0   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   00           NOP
+   \   000001   00           NOP
+   \   000002   00           NOP
+   \   000003   00           NOP
+   \   000004   00           NOP
+   \   000005   00           NOP
+   \   000006   00           NOP
+   \   000007   00           NOP
+   \   000008   00           NOP
+   \   000009   00           NOP
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+   \   00000C   00           NOP
+   \   00000D   00           NOP
+   \   00000E   00           NOP
+   \   00000F   00           NOP
+   \   000010   00           NOP
+   \   000011   00           NOP
+   \   000012   00           NOP
+   \   000013   00           NOP
+   \   000014   00           NOP
+   \   000015   00           NOP
+   \   000016   00           NOP
+   \   000017   00           NOP
+   \   000018   00           NOP
+   \   000019   00           NOP
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+   \   00001C   00           NOP
+   \   00001D   00           NOP
+   \   00001E   00           NOP
+   \   00001F   00           NOP
+   \   000020   00           NOP
+   \   000021   00           NOP
+   \   000022   00           NOP
+   \   000023   00           NOP
+   \   000024   00           NOP
+   \   000025   00           NOP
+   \   000026   00           NOP
+   \   000027   00           NOP
+   \   000028   00           NOP
+   \   000029   00           NOP
+   \   00002A   00           NOP
+   \   00002B   00           NOP
+   \   00002C   00           NOP
+   \   00002D   00           NOP
+   \   00002E   00           NOP
+   \   00002F   00           NOP
+   \   000030   00           NOP
+   \   000031   00           NOP
+   \   000032   00           NOP
+   \   000033   00           NOP
+   \   000034   00           NOP
+   \   000035   00           NOP
+   \   000036   00           NOP
+   \   000037   00           NOP
+   \   000038   00           NOP
+   \   000039   00           NOP
+   \   00003A   00           NOP
+   \   00003B   00           NOP
+   \   00003C   00           NOP
+   \   00003D   00           NOP
+   \   00003E   00           NOP
+   \   00003F   00           NOP
+   \   000040   00           NOP
+   \   000041   00           NOP
+   \   000042   00           NOP
+   \   000043   00           NOP
+   \   000044   00           NOP
+   \   000045   00           NOP
+   \   000046   00           NOP
+   \   000047   00           NOP
+   \   000048   00           NOP
+   \   000049   00           NOP
+   \   00004A   00           NOP
+   \   00004B   00           NOP
+   \   00004C   00           NOP
+   \   00004D   00           NOP
+   \   00004E   00           NOP
+   \   00004F   00           NOP
+   \   000050   00           NOP
+   \   000051   00           NOP
+   \   000052   00           NOP
+   \   000053   00           NOP
+   \   000054   00           NOP
+   \   000055   00           NOP
+   \   000056   00           NOP
+   \   000057   00           NOP
+   \   000058   00           NOP
+   \   000059   00           NOP
+   \   00005A   00           NOP
+   \   00005B   00           NOP
+   \   00005C   00           NOP
+   \   00005D   00           NOP
+   \   00005E   00           NOP
+   \   00005F   00           NOP
+   \   000060   00           NOP
+   \   000061   00           NOP
+   \   000062   00           NOP
+   \   000063   00           NOP
+   \   000064   00           NOP
+   \   000065   00           NOP
+   \   000066   00           NOP
+   \   000067   00           NOP
+   \   000068   00           NOP
+   \   000069   00           NOP
+   \   00006A   00           NOP
+   \   00006B   00           NOP
+   \   00006C   00           NOP
+   \   00006D   00           NOP
+   \   00006E   00           NOP
+   \   00006F   00           NOP
+   \   000070   00           NOP
+   \   000071   00           NOP
+   \   000072   00           NOP
+   \   000073   00           NOP
+   \   000074   00           NOP
+   \   000075   00           NOP
+   \   000076   00           NOP
+   \   000077   00           NOP
+   \   000078   00           NOP
+   \   000079   00           NOP
+   \   00007A   00           NOP
+   \   00007B   00           NOP
+   \   00007C   00           NOP
+   \   00007D   00           NOP
+   \   00007E   00           NOP
+   \   00007F   00           NOP
+   \   000080   00           NOP
+   \   000081   00           NOP
+   \   000082   00           NOP
+   \   000083   00           NOP
+   \   000084   00           NOP
+   \   000085   00           NOP
+   \   000086   00           NOP
+   \   000087   00           NOP
+   \   000088   00           NOP
+   \   000089   00           NOP
+   \   00008A   00           NOP
+   \   00008B   00           NOP
+   \   00008C   00           NOP
+   \   00008D   00           NOP
+   \   00008E   00           NOP
+   \   00008F   00           NOP
+   \   000090   00           NOP
+   \   000091   00           NOP
+   \   000092   00           NOP
+   \   000093   00           NOP
+   \   000094   00           NOP
+   \   000095   00           NOP
+   \   000096   00           NOP
+   \   000097   00           NOP
+   \   000098   00           NOP
+   \   000099   00           NOP
+   \   00009A   00           NOP
+   \   00009B   00           NOP
+   \   00009C   00           NOP
+   \   00009D   00           NOP
+   \   00009E   00           NOP
+   \   00009F   00           NOP
+   \   0000A0                REQUIRE ??Subroutine10_0
+   \   0000A0                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   43FD02       ORL     0xfd,#0x2
+   \   000003   C281         CLR     0x80.1
+   \   000005   02....       LJMP    ?Subroutine7 & 0xFFFF
+     33          //SCL为高电平时，SDA发生低到高跳变
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     34          void _Stop(void)
+   \                     _Stop:
+     35          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     36            /*
+     37              _SDA_0;
+     38              _SCL_1;
+     39               NOP();
+     40              _SDA_0;
+     41               NOP();
+     42              _SCL_0;
+     43               NOP();
+     44            */
+     45              _SDA_0;
+   \   000000   43FE10       ORL     0xfe,#0x10
+   \   000003   C294         CLR     0x90.4
+     46              _SCL_1;
+   \   000005   12....       LCALL   ?Subroutine1 & 0xFFFF
+     47               NOP();
+     48              _SDA_1;
+   \                     ??CrossCallReturnLabel_1:
+   \   000008   D294         SETB    0x90.4
+     49               NOP();
+   \   00000A   00           NOP
+   \   00000B   00           NOP
+   \   00000C   00           NOP
+   \   00000D   00           NOP
+   \   00000E   00           NOP
+   \   00000F   00           NOP
+   \   000010   00           NOP
+   \   000011   00           NOP
+   \   000012   00           NOP
+   \   000013   00           NOP
+   \   000014   00           NOP
+   \   000015   00           NOP
+   \   000016   00           NOP
+   \   000017   00           NOP
+   \   000018   00           NOP
+   \   000019   00           NOP
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+   \   00001C   00           NOP
+   \   00001D   00           NOP
+   \   00001E   00           NOP
+   \   00001F   00           NOP
+   \   000020   00           NOP
+   \   000021   00           NOP
+   \   000022   00           NOP
+   \   000023   00           NOP
+   \   000024   00           NOP
+   \   000025   00           NOP
+   \   000026   00           NOP
+   \   000027   00           NOP
+   \   000028   00           NOP
+   \   000029   00           NOP
+   \   00002A   00           NOP
+   \   00002B   00           NOP
+   \   00002C   00           NOP
+   \   00002D   00           NOP
+   \   00002E   00           NOP
+   \   00002F   00           NOP
+   \   000030   00           NOP
+   \   000031   00           NOP
+   \   000032   00           NOP
+   \   000033   00           NOP
+   \   000034   00           NOP
+   \   000035   00           NOP
+   \   000036   00           NOP
+   \   000037   00           NOP
+   \   000038   00           NOP
+   \   000039   00           NOP
+   \   00003A   00           NOP
+   \   00003B   00           NOP
+   \   00003C   00           NOP
+   \   00003D   00           NOP
+   \   00003E   00           NOP
+   \   00003F   00           NOP
+   \   000040   00           NOP
+   \   000041   00           NOP
+   \   000042   00           NOP
+   \   000043   00           NOP
+   \   000044   00           NOP
+   \   000045   00           NOP
+   \   000046   00           NOP
+   \   000047   00           NOP
+   \   000048   00           NOP
+   \   000049   00           NOP
+   \   00004A   00           NOP
+   \   00004B   00           NOP
+   \   00004C   00           NOP
+   \   00004D   00           NOP
+   \   00004E   00           NOP
+   \   00004F   00           NOP
+   \   000050   00           NOP
+   \   000051   00           NOP
+   \   000052   00           NOP
+   \   000053   00           NOP
+   \   000054   00           NOP
+   \   000055   00           NOP
+   \   000056   00           NOP
+   \   000057   00           NOP
+   \   000058   00           NOP
+   \   000059   00           NOP
+   \   00005A   00           NOP
+   \   00005B   00           NOP
+   \   00005C   00           NOP
+   \   00005D   00           NOP
+   \   00005E   00           NOP
+   \   00005F   00           NOP
+   \   000060   00           NOP
+   \   000061   00           NOP
+   \   000062   00           NOP
+   \   000063   00           NOP
+   \   000064   00           NOP
+   \   000065   00           NOP
+   \   000066   00           NOP
+   \   000067   00           NOP
+   \   000068   00           NOP
+   \   000069   00           NOP
+   \   00006A   00           NOP
+   \   00006B   00           NOP
+   \   00006C   00           NOP
+   \   00006D   00           NOP
+   \   00006E   00           NOP
+   \   00006F   00           NOP
+   \   000070   00           NOP
+   \   000071   00           NOP
+   \   000072   00           NOP
+   \   000073   00           NOP
+   \   000074   00           NOP
+   \   000075   00           NOP
+   \   000076   00           NOP
+   \   000077   00           NOP
+   \   000078   00           NOP
+   \   000079   00           NOP
+   \   00007A   00           NOP
+   \   00007B   00           NOP
+   \   00007C   00           NOP
+   \   00007D   00           NOP
+   \   00007E   00           NOP
+   \   00007F   00           NOP
+   \   000080   00           NOP
+   \   000081   00           NOP
+   \   000082   00           NOP
+   \   000083   00           NOP
+   \   000084   00           NOP
+   \   000085   00           NOP
+   \   000086   00           NOP
+   \   000087   00           NOP
+   \   000088   00           NOP
+   \   000089   00           NOP
+   \   00008A   00           NOP
+   \   00008B   00           NOP
+   \   00008C   00           NOP
+   \   00008D   00           NOP
+   \   00008E   00           NOP
+   \   00008F   00           NOP
+   \   000090   00           NOP
+   \   000091   00           NOP
+   \   000092   00           NOP
+   \   000093   00           NOP
+   \   000094   00           NOP
+   \   000095   00           NOP
+   \   000096   00           NOP
+   \   000097   00           NOP
+   \   000098   00           NOP
+   \   000099   00           NOP
+   \   00009A   00           NOP
+   \   00009B   00           NOP
+   \   00009C   00           NOP
+   \   00009D   00           NOP
+   \   00009E   00           NOP
+   \   00009F   00           NOP
+   \   0000A0   00           NOP
+   \   0000A1   00           NOP
+   \   0000A2   00           NOP
+   \   0000A3   00           NOP
+   \   0000A4   00           NOP
+   \   0000A5   00           NOP
+   \   0000A6   00           NOP
+   \   0000A7   00           NOP
+   \   0000A8   00           NOP
+   \   0000A9   00           NOP
+     50          }
+   \   0000AA   02....       LJMP    ?BRET
+   \   0000AD                REQUIRE _A_P0
+   \   0000AD                REQUIRE _A_P1
+   \   0000AD                REQUIRE P0DIR
+   \   0000AD                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     51          void _Port_Init(void)
+   \                     _Port_Init:
+     52          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     53              _SCL_0;
+   \   000000   12....       LCALL   ?Subroutine4 & 0xFFFF
+     54              _SDA_1;
+   \                     ??CrossCallReturnLabel_7:
+   \   000003   D294         SETB    0x90.4
+     55          }
+   \   000005   02....       LJMP    ?BRET
+   \   000008                REQUIRE _A_P0
+   \   000008                REQUIRE _A_P1
+   \   000008                REQUIRE P0DIR
+   \   000008                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   43FD02       ORL     0xfd,#0x2
+   \   000003   C281         CLR     0x80.1
+   \   000005   43FE10       ORL     0xfe,#0x10
+   \   000008   22           RET
+     56          //保留
+     57          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     58          uint8 _Wait_ACK(void)
+   \                     _Wait_ACK:
+     59          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     60              uint8 bc=0;
+     61              uint16 i=1000;
+   \   000000   78E8         MOV     R0,#-0x18
+   \   000002   7903         MOV     R1,#0x3
+     62              _SDA_IN;
+   \   000004   53FEEF       ANL     0xfe,#0xef
+     63              _SCL_1;
+   \   000007   12....       LCALL   ?Subroutine5 & 0xFFFF
+     64              NOP();
+     65              do{
+     66              if(_SDA==0)
+   \                     ??CrossCallReturnLabel_14:
+   \   00000A   A294         MOV     C,0x90.4
+   \   00000C   5012         JNC     ??_Wait_ACK_0
+     67                break;
+     68              }while(i--);
+   \   00000E   E8           MOV     A,R0
+   \   00000F   FA           MOV     R2,A
+   \   000010   E9           MOV     A,R1
+   \   000011   FB           MOV     R3,A
+   \   000012   74FF         MOV     A,#-0x1
+   \   000014   2A           ADD     A,R2
+   \   000015   18           DEC     R0
+   \   000016   74FF         MOV     A,#-0x1
+   \   000018   3B           ADDC    A,R3
+   \   000019   F9           MOV     R1,A
+   \   00001A   EA           MOV     A,R2
+   \   00001B   7001         JNZ     ??_Wait_ACK_1
+   \   00001D   EB           MOV     A,R3
+   \                     ??_Wait_ACK_1:
+   \   00001E   70EA         JNZ     ??CrossCallReturnLabel_14
+     69              bc=_SDA;
+   \                     ??_Wait_ACK_0:
+   \   000020   A294         MOV     C,0x90.4
+   \   000022   E4           CLR     A
+   \   000023   92E0         MOV     0xE0 /* A   */.0,C
+   \   000025   F9           MOV     R1,A
+     70              _SCL_0;
+   \   000026   12....       LCALL   ?Subroutine4 & 0xFFFF
+     71              _SDA_OUT;
+     72              return bc;
+   \                     ??CrossCallReturnLabel_8:
+   \   000029   02....       LJMP    ?BRET
+   \   00002C                REQUIRE _A_P0
+   \   00002C                REQUIRE _A_P1
+   \   00002C                REQUIRE P0DIR
+   \   00002C                REQUIRE P1DIR
+     73          }
+     74          //发送应答信号
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     75          void sendACK(uint8 ack)
+   \                     sendACK:
+     76          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     77            if(ack)
+   \   000000   E9           MOV     A,R1
+   \   000001   43FE10       ORL     0xfe,#0x10
+   \   000004   6004         JZ      ??sendACK_0
+     78            {
+     79              _SDA_1;
+   \   000006   D294         SETB    0x90.4
+     80              _SCL_1;
+   \   000008   8002         SJMP    ??sendACK_1
+     81              NOP();
+     82              _SCL_0;
+     83              NOP();
+     84            }
+     85            else
+     86            {
+     87               _SDA_0;
+   \                     ??sendACK_0:
+   \   00000A   C294         CLR     0x90.4
+     88              _SCL_1;
+   \                     ??sendACK_1:
+   \   00000C   12....       LCALL   ?Subroutine0 & 0xFFFF
+     89              NOP();
+     90              _SCL_0;
+     91              NOP();
+     92            }
+     93          }
+   \                     ??CrossCallReturnLabel_9:
+   \   00000F   02....       LJMP    ?BRET
+   \   000012                REQUIRE _A_P0
+   \   000012                REQUIRE _A_P1
+   \   000012                REQUIRE P0DIR
+   \   000012                REQUIRE P1DIR
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   43FD02       ORL     0xfd,#0x2
+   \   000003   D281         SETB    0x80.1
+   \   000005                REQUIRE ??Subroutine9_0
+   \   000005                ; // Fall through to label ??Subroutine9_0
+     94          //接收应答信号
+     95            /*uint8 RecvACK()
+     96            {
+     97                _SCL_1;
+     98                NOP();
+     99                _SCL_IN;
+    100                 CY=SDA;
+    101                 _SCL_0;
+    102                 NOP();
+    103                 return CY;
+    104            }*/
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    105            uint8 _Write(uint8 data)
+   \                     _Write:
+    106            {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    107               uint8 i;
+    108               _SDA_OUT;
+   \   000004   43FE10       ORL     0xfe,#0x10
+    109               _SCL_0;
+   \   000007   43FD02       ORL     0xfd,#0x2
+   \   00000A   C281         CLR     0x80.1
+    110               for(i=0;i<8;i++)
+   \   00000C   7A08         MOV     R2,#0x8
+    111               {
+    112                 if(data&0x80)
+   \                     ??_Write_0:
+   \   00000E   E9           MOV     A,R1
+   \   00000F   A2E7         MOV     C,0xE0 /* A   */.7
+   \   000011   43FE10       ORL     0xfe,#0x10
+   \   000014   5004         JNC     ??_Write_1
+    113                 {
+    114                   _SDA_1;
+   \   000016   D294         SETB    0x90.4
+   \   000018   8002         SJMP    ??_Write_2
+    115                 }
+    116                 else
+    117                 {
+    118                   _SDA_0;
+   \                     ??_Write_1:
+   \   00001A   C294         CLR     0x90.4
+    119                 }
+    120                 data<<=1;
+   \                     ??_Write_2:
+   \   00001C   C3           CLR     C
+   \   00001D   33           RLC     A
+   \   00001E   F9           MOV     R1,A
+    121                 _SCL_1;
+   \   00001F   12....       LCALL   ?Subroutine0 & 0xFFFF
+    122                 NOP();
+    123                 _SCL_0;
+    124                 NOP();
+    125               }
+   \                     ??CrossCallReturnLabel_10:
+   \   000022   1A           DEC     R2
+   \   000023   EA           MOV     A,R2
+   \   000024   70E8         JNZ     ??_Write_0
+    126               _SDA_1;//释放总线
+   \   000026   43FE10       ORL     0xfe,#0x10
+   \   000029   D294         SETB    0x90.4
+    127               if(_Wait_ACK()==0)//ACK
+   \   00002B                ; Setup parameters for call to function _Wait_ACK
+   \   00002B   12....       LCALL   ??_Wait_ACK?relay
+   \   00002E   E9           MOV     A,R1
+   \   00002F   7004         JNZ     ??_Write_3
+    128               {
+    129                 return 1;
+   \   000031   7901         MOV     R1,#0x1
+   \   000033   8002         SJMP    ??_Write_4
+    130               }
+    131               else
+    132               {
+    133                 return 0;
+   \                     ??_Write_3:
+   \   000035   7900         MOV     R1,#0x0
+    134               }
+   \                     ??_Write_4:
+   \   000037                REQUIRE ?Subroutine6
+   \   000037                REQUIRE _A_P0
+   \   000037                REQUIRE _A_P1
+   \   000037                REQUIRE P0DIR
+   \   000037                REQUIRE P1DIR
+   \   000037                ; // Fall through to label ?Subroutine6
+    135            }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   D083         POP     DPH
+   \   000002   D082         POP     DPL
+   \   000004   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    136          uint8 _Read(void)
+   \                     _Read:
+    137          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+    138             uint8 data=0;
+   \   000000   7900         MOV     R1,#0x0
+    139             uint8 i;
+    140             _SDA_IN;
+   \   000002   53FEEF       ANL     0xfe,#0xef
+    141             _SCL_0;
+   \   000005   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+    142             NOP();
+    143             for(i=0;i<8;i++)
+   \                     ??CrossCallReturnLabel_12:
+   \   000008   7A08         MOV     R2,#0x8
+    144             {
+    145               _SCL=1;
+   \                     ??_Read_0:
+   \   00000A   D281         SETB    0x80.1
+    146               NOP();
+   \   00000C   00           NOP
+   \   00000D   00           NOP
+   \   00000E   00           NOP
+   \   00000F   00           NOP
+   \   000010   00           NOP
+   \   000011   00           NOP
+   \   000012   00           NOP
+   \   000013   00           NOP
+   \   000014   00           NOP
+   \   000015   00           NOP
+   \   000016   00           NOP
+   \   000017   00           NOP
+   \   000018   00           NOP
+   \   000019   00           NOP
+   \   00001A   00           NOP
+   \   00001B   00           NOP
+   \   00001C   00           NOP
+   \   00001D   00           NOP
+   \   00001E   00           NOP
+   \   00001F   00           NOP
+   \   000020   00           NOP
+   \   000021   00           NOP
+   \   000022   00           NOP
+   \   000023   00           NOP
+   \   000024   00           NOP
+   \   000025   00           NOP
+   \   000026   00           NOP
+   \   000027   00           NOP
+   \   000028   00           NOP
+   \   000029   00           NOP
+   \   00002A   00           NOP
+   \   00002B   00           NOP
+   \   00002C   00           NOP
+   \   00002D   00           NOP
+   \   00002E   00           NOP
+   \   00002F   00           NOP
+   \   000030   00           NOP
+   \   000031   00           NOP
+   \   000032   00           NOP
+   \   000033   00           NOP
+   \   000034   00           NOP
+   \   000035   00           NOP
+   \   000036   00           NOP
+   \   000037   00           NOP
+   \   000038   00           NOP
+   \   000039   00           NOP
+   \   00003A   00           NOP
+   \   00003B   00           NOP
+   \   00003C   00           NOP
+   \   00003D   00           NOP
+   \   00003E   00           NOP
+   \   00003F   00           NOP
+   \   000040   00           NOP
+   \   000041   00           NOP
+   \   000042   00           NOP
+   \   000043   00           NOP
+   \   000044   00           NOP
+   \   000045   00           NOP
+   \   000046   00           NOP
+   \   000047   00           NOP
+   \   000048   00           NOP
+   \   000049   00           NOP
+   \   00004A   00           NOP
+   \   00004B   00           NOP
+   \   00004C   00           NOP
+   \   00004D   00           NOP
+   \   00004E   00           NOP
+   \   00004F   00           NOP
+   \   000050   00           NOP
+   \   000051   00           NOP
+   \   000052   00           NOP
+   \   000053   00           NOP
+   \   000054   00           NOP
+   \   000055   00           NOP
+   \   000056   00           NOP
+   \   000057   00           NOP
+   \   000058   00           NOP
+   \   000059   00           NOP
+   \   00005A   00           NOP
+   \   00005B   00           NOP
+   \   00005C   00           NOP
+   \   00005D   00           NOP
+   \   00005E   00           NOP
+   \   00005F   00           NOP
+   \   000060   00           NOP
+   \   000061   00           NOP
+   \   000062   00           NOP
+   \   000063   00           NOP
+   \   000064   00           NOP
+   \   000065   00           NOP
+   \   000066   00           NOP
+   \   000067   00           NOP
+   \   000068   00           NOP
+   \   000069   00           NOP
+   \   00006A   00           NOP
+   \   00006B   00           NOP
+   \   00006C   00           NOP
+   \   00006D   00           NOP
+   \   00006E   00           NOP
+   \   00006F   00           NOP
+   \   000070   00           NOP
+   \   000071   00           NOP
+   \   000072   00           NOP
+   \   000073   00           NOP
+   \   000074   00           NOP
+   \   000075   00           NOP
+   \   000076   00           NOP
+   \   000077   00           NOP
+   \   000078   00           NOP
+   \   000079   00           NOP
+   \   00007A   00           NOP
+   \   00007B   00           NOP
+   \   00007C   00           NOP
+   \   00007D   00           NOP
+   \   00007E   00           NOP
+   \   00007F   00           NOP
+   \   000080   00           NOP
+   \   000081   00           NOP
+   \   000082   00           NOP
+   \   000083   00           NOP
+   \   000084   00           NOP
+   \   000085   00           NOP
+   \   000086   00           NOP
+   \   000087   00           NOP
+   \   000088   00           NOP
+   \   000089   00           NOP
+   \   00008A   00           NOP
+   \   00008B   00           NOP
+   \   00008C   00           NOP
+   \   00008D   00           NOP
+   \   00008E   00           NOP
+   \   00008F   00           NOP
+   \   000090   00           NOP
+   \   000091   00           NOP
+   \   000092   00           NOP
+   \   000093   00           NOP
+   \   000094   00           NOP
+   \   000095   00           NOP
+   \   000096   00           NOP
+   \   000097   00           NOP
+   \   000098   00           NOP
+   \   000099   00           NOP
+   \   00009A   00           NOP
+   \   00009B   00           NOP
+   \   00009C   00           NOP
+   \   00009D   00           NOP
+   \   00009E   00           NOP
+   \   00009F   00           NOP
+   \   0000A0   00           NOP
+   \   0000A1   00           NOP
+   \   0000A2   00           NOP
+   \   0000A3   00           NOP
+   \   0000A4   00           NOP
+   \   0000A5   00           NOP
+   \   0000A6   00           NOP
+   \   0000A7   00           NOP
+   \   0000A8   00           NOP
+   \   0000A9   00           NOP
+   \   0000AA   00           NOP
+   \   0000AB   00           NOP
+    147               data<<=1;
+   \   0000AC   E9           MOV     A,R1
+   \   0000AD   C3           CLR     C
+   \   0000AE   33           RLC     A
+   \   0000AF   F9           MOV     R1,A
+    148               if(_SDA)
+   \   0000B0   A294         MOV     C,0x90.4
+   \   0000B2   5003         JNC     ??_Read_1
+    149               {
+    150                 data|=1;
+   \   0000B4   D2E0         SETB    0xE0 /* A   */.0
+   \   0000B6   F9           MOV     R1,A
+    151               }
+    152               _SCL=0;
+   \                     ??_Read_1:
+   \   0000B7   C281         CLR     0x80.1
+    153               NOP();
+   \   0000B9   00           NOP
+   \   0000BA   00           NOP
+   \   0000BB   00           NOP
+   \   0000BC   00           NOP
+   \   0000BD   00           NOP
+   \   0000BE   00           NOP
+   \   0000BF   00           NOP
+   \   0000C0   00           NOP
+   \   0000C1   00           NOP
+   \   0000C2   00           NOP
+   \   0000C3   00           NOP
+   \   0000C4   00           NOP
+   \   0000C5   00           NOP
+   \   0000C6   00           NOP
+   \   0000C7   00           NOP
+   \   0000C8   00           NOP
+   \   0000C9   00           NOP
+   \   0000CA   00           NOP
+   \   0000CB   00           NOP
+   \   0000CC   00           NOP
+   \   0000CD   00           NOP
+   \   0000CE   00           NOP
+   \   0000CF   00           NOP
+   \   0000D0   00           NOP
+   \   0000D1   00           NOP
+   \   0000D2   00           NOP
+   \   0000D3   00           NOP
+   \   0000D4   00           NOP
+   \   0000D5   00           NOP
+   \   0000D6   00           NOP
+   \   0000D7   00           NOP
+   \   0000D8   00           NOP
+   \   0000D9   00           NOP
+   \   0000DA   00           NOP
+   \   0000DB   00           NOP
+   \   0000DC   00           NOP
+   \   0000DD   00           NOP
+   \   0000DE   00           NOP
+   \   0000DF   00           NOP
+   \   0000E0   00           NOP
+   \   0000E1   00           NOP
+   \   0000E2   00           NOP
+   \   0000E3   00           NOP
+   \   0000E4   00           NOP
+   \   0000E5   00           NOP
+   \   0000E6   00           NOP
+   \   0000E7   00           NOP
+   \   0000E8   00           NOP
+   \   0000E9   00           NOP
+   \   0000EA   00           NOP
+   \   0000EB   00           NOP
+   \   0000EC   00           NOP
+   \   0000ED   00           NOP
+   \   0000EE   00           NOP
+   \   0000EF   00           NOP
+   \   0000F0   00           NOP
+   \   0000F1   00           NOP
+   \   0000F2   00           NOP
+   \   0000F3   00           NOP
+   \   0000F4   00           NOP
+   \   0000F5   00           NOP
+   \   0000F6   00           NOP
+   \   0000F7   00           NOP
+   \   0000F8   00           NOP
+   \   0000F9   00           NOP
+   \   0000FA   00           NOP
+   \   0000FB   00           NOP
+   \   0000FC   00           NOP
+   \   0000FD   00           NOP
+   \   0000FE   00           NOP
+   \   0000FF   00           NOP
+   \   000100   00           NOP
+   \   000101   00           NOP
+   \   000102   00           NOP
+   \   000103   00           NOP
+   \   000104   00           NOP
+   \   000105   00           NOP
+   \   000106   00           NOP
+   \   000107   00           NOP
+   \   000108   00           NOP
+   \   000109   00           NOP
+   \   00010A   00           NOP
+   \   00010B   00           NOP
+   \   00010C   00           NOP
+   \   00010D   00           NOP
+   \   00010E   00           NOP
+   \   00010F   00           NOP
+   \   000110   00           NOP
+   \   000111   00           NOP
+   \   000112   00           NOP
+   \   000113   00           NOP
+   \   000114   00           NOP
+   \   000115   00           NOP
+   \   000116   00           NOP
+   \   000117   00           NOP
+   \   000118   00           NOP
+   \   000119   00           NOP
+   \   00011A   00           NOP
+   \   00011B   00           NOP
+   \   00011C   00           NOP
+   \   00011D   00           NOP
+   \   00011E   00           NOP
+   \   00011F   00           NOP
+   \   000120   00           NOP
+   \   000121   00           NOP
+   \   000122   00           NOP
+   \   000123   00           NOP
+   \   000124   00           NOP
+   \   000125   00           NOP
+   \   000126   00           NOP
+   \   000127   00           NOP
+   \   000128   00           NOP
+   \   000129   00           NOP
+   \   00012A   00           NOP
+   \   00012B   00           NOP
+   \   00012C   00           NOP
+   \   00012D   00           NOP
+   \   00012E   00           NOP
+   \   00012F   00           NOP
+   \   000130   00           NOP
+   \   000131   00           NOP
+   \   000132   00           NOP
+   \   000133   00           NOP
+   \   000134   00           NOP
+   \   000135   00           NOP
+   \   000136   00           NOP
+   \   000137   00           NOP
+   \   000138   00           NOP
+   \   000139   00           NOP
+   \   00013A   00           NOP
+   \   00013B   00           NOP
+   \   00013C   00           NOP
+   \   00013D   00           NOP
+   \   00013E   00           NOP
+   \   00013F   00           NOP
+   \   000140   00           NOP
+   \   000141   00           NOP
+   \   000142   00           NOP
+   \   000143   00           NOP
+   \   000144   00           NOP
+   \   000145   00           NOP
+   \   000146   00           NOP
+   \   000147   00           NOP
+   \   000148   00           NOP
+   \   000149   00           NOP
+   \   00014A   00           NOP
+   \   00014B   00           NOP
+   \   00014C   00           NOP
+   \   00014D   00           NOP
+   \   00014E   00           NOP
+   \   00014F   00           NOP
+   \   000150   00           NOP
+   \   000151   00           NOP
+   \   000152   00           NOP
+   \   000153   00           NOP
+   \   000154   00           NOP
+   \   000155   00           NOP
+   \   000156   00           NOP
+   \   000157   00           NOP
+   \   000158   00           NOP
+    154             }
+   \   000159   1A           DEC     R2
+   \   00015A   EA           MOV     A,R2
+   \   00015B   6003         JZ      $+5
+   \   00015D   02....       LJMP    ??_Read_0 & 0xFFFF
+    155             //_SDA_OUT;
+    156             //_SCL_0;
+    157             //NOP();
+    158             return data;
+   \   000160   02....       LJMP    ?BRET
+   \   000163                REQUIRE _A_P0
+   \   000163                REQUIRE _A_P1
+   \   000163                REQUIRE P0DIR
+   \   000163                REQUIRE P1DIR
+    159          }
+    160          //数据写入
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    161          uint8 _Write_Data(uint8 addr,uint8 wd)
+   \                     _Write_Data:
+    162          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+   \   000007   EA           MOV     A,R2
+   \   000008   FF           MOV     R7,A
+    163                _Start();
+   \   000009                ; Setup parameters for call to function _Start
+   \   000009   12....       LCALL   ?Subroutine3 & 0xFFFF
+    164                if(_Write(MPU6050_SA_W))//Slave address+R/W    0xD0+0/1
+   \                     ??CrossCallReturnLabel_5:
+   \   00000C   7003         JNZ     $+5
+   \   00000E   02....       LJMP    ??_Write_Data_0 & 0xFFFF
+    165                {
+    166                    if(_Write(addr))
+   \   000011                ; Setup parameters for call to function _Write
+   \   000011   EE           MOV     A,R6
+   \   000012   F9           MOV     R1,A
+   \   000013   12....       LCALL   ??_Write?relay
+   \   000016   E9           MOV     A,R1
+   \   000017   7003         JNZ     $+5
+   \   000019   02....       LJMP    ??_Write_Data_1 & 0xFFFF
+    167                    {
+    168                        if(_Write(wd))
+   \   00001C                ; Setup parameters for call to function _Write
+   \   00001C   EF           MOV     A,R7
+   \   00001D   F9           MOV     R1,A
+   \   00001E   12....       LCALL   ??_Write?relay
+   \   000021   E9           MOV     A,R1
+   \   000022   7003         JNZ     $+5
+   \   000024   02....       LJMP    ??_Write_Data_2 & 0xFFFF
+    169                        {
+    170                          _Stop();
+   \   000027                ; Setup parameters for call to function _Stop
+   \   000027   12....       LCALL   ??_Stop?relay
+    171                          NOP();
+   \   00002A   00           NOP
+   \   00002B   00           NOP
+   \   00002C   00           NOP
+   \   00002D   00           NOP
+   \   00002E   00           NOP
+   \   00002F   00           NOP
+   \   000030   00           NOP
+   \   000031   00           NOP
+   \   000032   00           NOP
+   \   000033   00           NOP
+   \   000034   00           NOP
+   \   000035   00           NOP
+   \   000036   00           NOP
+   \   000037   00           NOP
+   \   000038   00           NOP
+   \   000039   00           NOP
+   \   00003A   00           NOP
+   \   00003B   00           NOP
+   \   00003C   00           NOP
+   \   00003D   00           NOP
+   \   00003E   00           NOP
+   \   00003F   00           NOP
+   \   000040   00           NOP
+   \   000041   00           NOP
+   \   000042   00           NOP
+   \   000043   00           NOP
+   \   000044   00           NOP
+   \   000045   00           NOP
+   \   000046   00           NOP
+   \   000047   00           NOP
+   \   000048   00           NOP
+   \   000049   00           NOP
+   \   00004A   00           NOP
+   \   00004B   00           NOP
+   \   00004C   00           NOP
+   \   00004D   00           NOP
+   \   00004E   00           NOP
+   \   00004F   00           NOP
+   \   000050   00           NOP
+   \   000051   00           NOP
+   \   000052   00           NOP
+   \   000053   00           NOP
+   \   000054   00           NOP
+   \   000055   00           NOP
+   \   000056   00           NOP
+   \   000057   00           NOP
+   \   000058   00           NOP
+   \   000059   00           NOP
+   \   00005A   00           NOP
+   \   00005B   00           NOP
+   \   00005C   00           NOP
+   \   00005D   00           NOP
+   \   00005E   00           NOP
+   \   00005F   00           NOP
+   \   000060   00           NOP
+   \   000061   00           NOP
+   \   000062   00           NOP
+   \   000063   00           NOP
+   \   000064   00           NOP
+   \   000065   00           NOP
+   \   000066   00           NOP
+   \   000067   00           NOP
+   \   000068   00           NOP
+   \   000069   00           NOP
+   \   00006A   00           NOP
+   \   00006B   00           NOP
+   \   00006C   00           NOP
+   \   00006D   00           NOP
+   \   00006E   00           NOP
+   \   00006F   00           NOP
+   \   000070   00           NOP
+   \   000071   00           NOP
+   \   000072   00           NOP
+   \   000073   00           NOP
+   \   000074   00           NOP
+   \   000075   00           NOP
+   \   000076   00           NOP
+   \   000077   00           NOP
+   \   000078   00           NOP
+   \   000079   00           NOP
+   \   00007A   00           NOP
+   \   00007B   00           NOP
+   \   00007C   00           NOP
+   \   00007D   00           NOP
+   \   00007E   00           NOP
+   \   00007F   00           NOP
+   \   000080   00           NOP
+   \   000081   00           NOP
+   \   000082   00           NOP
+   \   000083   00           NOP
+   \   000084   00           NOP
+   \   000085   00           NOP
+   \   000086   00           NOP
+   \   000087   00           NOP
+   \   000088   00           NOP
+   \   000089   00           NOP
+   \   00008A   00           NOP
+   \   00008B   00           NOP
+   \   00008C   00           NOP
+   \   00008D   00           NOP
+   \   00008E   00           NOP
+   \   00008F   00           NOP
+   \   000090   00           NOP
+   \   000091   00           NOP
+   \   000092   00           NOP
+   \   000093   00           NOP
+   \   000094   00           NOP
+   \   000095   00           NOP
+   \   000096   00           NOP
+   \   000097   00           NOP
+   \   000098   00           NOP
+   \   000099   00           NOP
+   \   00009A   00           NOP
+   \   00009B   00           NOP
+   \   00009C   00           NOP
+   \   00009D   00           NOP
+   \   00009E   00           NOP
+   \   00009F   00           NOP
+   \   0000A0   00           NOP
+   \   0000A1   00           NOP
+   \   0000A2   00           NOP
+   \   0000A3   00           NOP
+   \   0000A4   00           NOP
+   \   0000A5   00           NOP
+   \   0000A6   00           NOP
+   \   0000A7   00           NOP
+   \   0000A8   00           NOP
+   \   0000A9   00           NOP
+   \   0000AA   00           NOP
+   \   0000AB   00           NOP
+   \   0000AC   00           NOP
+   \   0000AD   00           NOP
+   \   0000AE   00           NOP
+   \   0000AF   00           NOP
+   \   0000B0   00           NOP
+   \   0000B1   00           NOP
+   \   0000B2   00           NOP
+   \   0000B3   00           NOP
+   \   0000B4   00           NOP
+   \   0000B5   00           NOP
+   \   0000B6   00           NOP
+   \   0000B7   00           NOP
+   \   0000B8   00           NOP
+   \   0000B9   00           NOP
+   \   0000BA   00           NOP
+   \   0000BB   00           NOP
+   \   0000BC   00           NOP
+   \   0000BD   00           NOP
+   \   0000BE   00           NOP
+   \   0000BF   00           NOP
+   \   0000C0   00           NOP
+   \   0000C1   00           NOP
+   \   0000C2   00           NOP
+   \   0000C3   00           NOP
+   \   0000C4   00           NOP
+   \   0000C5   00           NOP
+   \   0000C6   00           NOP
+   \   0000C7   00           NOP
+   \   0000C8   00           NOP
+   \   0000C9   00           NOP
+    172                          return wd;
+   \   0000CA   EF           MOV     A,R7
+   \   0000CB   F9           MOV     R1,A
+   \   0000CC   800A         SJMP    ??_Write_Data_3
+    173                        }
+    174                        return 0xf3;
+   \                     ??_Write_Data_2:
+   \   0000CE   79F3         MOV     R1,#-0xd
+   \   0000D0   8006         SJMP    ??_Write_Data_3
+    175                    }
+    176                    return 0xf2;
+   \                     ??_Write_Data_1:
+   \   0000D2   79F2         MOV     R1,#-0xe
+   \   0000D4   8002         SJMP    ??_Write_Data_3
+    177                }
+    178                else
+    179                  return 0xf1;
+   \                     ??_Write_Data_0:
+   \   0000D6   79F1         MOV     R1,#-0xf
+   \                     ??_Write_Data_3:
+   \   0000D8                REQUIRE ?Subroutine8
+   \   0000D8                ; // Fall through to label ?Subroutine8
+    180          
+    181          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   7F01         MOV     R7,#0x1
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   12....       LCALL   ??_Start?relay
+   \   000003                ; Setup parameters for call to function _Write
+   \   000003                ; Setup parameters for call to function _Write
+   \   000003   79D0         MOV     R1,#-0x30
+   \   000005   12....       LCALL   ??_Write?relay
+   \   000008   E9           MOV     A,R1
+   \   000009   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    182          uint8 _Read_Data(uint8 addr)//数据读出
+   \                     _Read_Data:
+    183          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   E9           MOV     A,R1
+   \   000006   FE           MOV     R6,A
+    184                 uint8 rd;
+    185                _Start();
+   \   000007                ; Setup parameters for call to function _Start
+   \   000007   12....       LCALL   ?Subroutine3 & 0xFFFF
+    186                if(_Write(MPU6050_SA_W))
+   \                     ??CrossCallReturnLabel_6:
+   \   00000A   7003         JNZ     $+5
+   \   00000C   02....       LJMP    ??_Read_Data_0 & 0xFFFF
+    187                {
+    188                  if(_Write(addr))
+   \   00000F                ; Setup parameters for call to function _Write
+   \   00000F   EE           MOV     A,R6
+   \   000010   F9           MOV     R1,A
+   \   000011   12....       LCALL   ??_Write?relay
+   \   000014   E9           MOV     A,R1
+   \   000015   7003         JNZ     $+5
+   \   000017   02....       LJMP    ??_Read_Data_1 & 0xFFFF
+    189                  {
+    190                    _Start();
+   \   00001A                ; Setup parameters for call to function _Start
+   \   00001A   12....       LCALL   ??_Start?relay
+    191                    if(_Write(MPU6050_SA_R))
+   \   00001D                ; Setup parameters for call to function _Write
+   \   00001D   79D1         MOV     R1,#-0x2f
+   \   00001F   12....       LCALL   ??_Write?relay
+   \   000022   E9           MOV     A,R1
+   \   000023   7003         JNZ     $+5
+   \   000025   02....       LJMP    ??_Read_Data_2 & 0xFFFF
+    192                    {
+    193                      rd=_Read();
+   \   000028                ; Setup parameters for call to function _Read
+   \   000028   12....       LCALL   ??_Read?relay
+   \   00002B   E9           MOV     A,R1
+   \   00002C   FE           MOV     R6,A
+    194                      if(_Wait_ACK())///NoACk
+   \   00002D                ; Setup parameters for call to function _Wait_ACK
+   \   00002D   12....       LCALL   ??_Wait_ACK?relay
+   \   000030   E9           MOV     A,R1
+   \   000031   6003         JZ      ??_Read_Data_3
+    195                      _Stop();
+   \   000033                ; Setup parameters for call to function _Stop
+   \   000033   12....       LCALL   ??_Stop?relay
+    196                      NOP();
+   \                     ??_Read_Data_3:
+   \   000036   00           NOP
+   \   000037   00           NOP
+   \   000038   00           NOP
+   \   000039   00           NOP
+   \   00003A   00           NOP
+   \   00003B   00           NOP
+   \   00003C   00           NOP
+   \   00003D   00           NOP
+   \   00003E   00           NOP
+   \   00003F   00           NOP
+   \   000040   00           NOP
+   \   000041   00           NOP
+   \   000042   00           NOP
+   \   000043   00           NOP
+   \   000044   00           NOP
+   \   000045   00           NOP
+   \   000046   00           NOP
+   \   000047   00           NOP
+   \   000048   00           NOP
+   \   000049   00           NOP
+   \   00004A   00           NOP
+   \   00004B   00           NOP
+   \   00004C   00           NOP
+   \   00004D   00           NOP
+   \   00004E   00           NOP
+   \   00004F   00           NOP
+   \   000050   00           NOP
+   \   000051   00           NOP
+   \   000052   00           NOP
+   \   000053   00           NOP
+   \   000054   00           NOP
+   \   000055   00           NOP
+   \   000056   00           NOP
+   \   000057   00           NOP
+   \   000058   00           NOP
+   \   000059   00           NOP
+   \   00005A   00           NOP
+   \   00005B   00           NOP
+   \   00005C   00           NOP
+   \   00005D   00           NOP
+   \   00005E   00           NOP
+   \   00005F   00           NOP
+   \   000060   00           NOP
+   \   000061   00           NOP
+   \   000062   00           NOP
+   \   000063   00           NOP
+   \   000064   00           NOP
+   \   000065   00           NOP
+   \   000066   00           NOP
+   \   000067   00           NOP
+   \   000068   00           NOP
+   \   000069   00           NOP
+   \   00006A   00           NOP
+   \   00006B   00           NOP
+   \   00006C   00           NOP
+   \   00006D   00           NOP
+   \   00006E   00           NOP
+   \   00006F   00           NOP
+   \   000070   00           NOP
+   \   000071   00           NOP
+   \   000072   00           NOP
+   \   000073   00           NOP
+   \   000074   00           NOP
+   \   000075   00           NOP
+   \   000076   00           NOP
+   \   000077   00           NOP
+   \   000078   00           NOP
+   \   000079   00           NOP
+   \   00007A   00           NOP
+   \   00007B   00           NOP
+   \   00007C   00           NOP
+   \   00007D   00           NOP
+   \   00007E   00           NOP
+   \   00007F   00           NOP
+   \   000080   00           NOP
+   \   000081   00           NOP
+   \   000082   00           NOP
+   \   000083   00           NOP
+   \   000084   00           NOP
+   \   000085   00           NOP
+   \   000086   00           NOP
+   \   000087   00           NOP
+   \   000088   00           NOP
+   \   000089   00           NOP
+   \   00008A   00           NOP
+   \   00008B   00           NOP
+   \   00008C   00           NOP
+   \   00008D   00           NOP
+   \   00008E   00           NOP
+   \   00008F   00           NOP
+   \   000090   00           NOP
+   \   000091   00           NOP
+   \   000092   00           NOP
+   \   000093   00           NOP
+   \   000094   00           NOP
+   \   000095   00           NOP
+   \   000096   00           NOP
+   \   000097   00           NOP
+   \   000098   00           NOP
+   \   000099   00           NOP
+   \   00009A   00           NOP
+   \   00009B   00           NOP
+   \   00009C   00           NOP
+   \   00009D   00           NOP
+   \   00009E   00           NOP
+   \   00009F   00           NOP
+   \   0000A0   00           NOP
+   \   0000A1   00           NOP
+   \   0000A2   00           NOP
+   \   0000A3   00           NOP
+   \   0000A4   00           NOP
+   \   0000A5   00           NOP
+   \   0000A6   00           NOP
+   \   0000A7   00           NOP
+   \   0000A8   00           NOP
+   \   0000A9   00           NOP
+   \   0000AA   00           NOP
+   \   0000AB   00           NOP
+   \   0000AC   00           NOP
+   \   0000AD   00           NOP
+   \   0000AE   00           NOP
+   \   0000AF   00           NOP
+   \   0000B0   00           NOP
+   \   0000B1   00           NOP
+   \   0000B2   00           NOP
+   \   0000B3   00           NOP
+   \   0000B4   00           NOP
+   \   0000B5   00           NOP
+   \   0000B6   00           NOP
+   \   0000B7   00           NOP
+   \   0000B8   00           NOP
+   \   0000B9   00           NOP
+   \   0000BA   00           NOP
+   \   0000BB   00           NOP
+   \   0000BC   00           NOP
+   \   0000BD   00           NOP
+   \   0000BE   00           NOP
+   \   0000BF   00           NOP
+   \   0000C0   00           NOP
+   \   0000C1   00           NOP
+   \   0000C2   00           NOP
+   \   0000C3   00           NOP
+   \   0000C4   00           NOP
+   \   0000C5   00           NOP
+   \   0000C6   00           NOP
+   \   0000C7   00           NOP
+   \   0000C8   00           NOP
+   \   0000C9   00           NOP
+   \   0000CA   00           NOP
+   \   0000CB   00           NOP
+   \   0000CC   00           NOP
+   \   0000CD   00           NOP
+   \   0000CE   00           NOP
+   \   0000CF   00           NOP
+   \   0000D0   00           NOP
+   \   0000D1   00           NOP
+   \   0000D2   00           NOP
+   \   0000D3   00           NOP
+   \   0000D4   00           NOP
+   \   0000D5   00           NOP
+    197                      return rd;
+   \   0000D6   EE           MOV     A,R6
+   \   0000D7   F9           MOV     R1,A
+   \   0000D8   800A         SJMP    ??_Read_Data_4
+    198                    }
+    199                    return 0xf3;
+   \                     ??_Read_Data_2:
+   \   0000DA   79F3         MOV     R1,#-0xd
+   \   0000DC   8006         SJMP    ??_Read_Data_4
+    200                  }
+    201                  return 0xf2;
+   \                     ??_Read_Data_1:
+   \   0000DE   79F2         MOV     R1,#-0xe
+   \   0000E0   8002         SJMP    ??_Read_Data_4
+    202                }
+    203                return 0xf1;
+   \                     ??_Read_Data_0:
+   \   0000E2   79F1         MOV     R1,#-0xf
+   \                     ??_Read_Data_4:
+   \   0000E4   02....       LJMP    ?Subroutine8 & 0xFFFF
+    204          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    205          void  _MPU_Init(void)
+   \                     _MPU_Init:
+    206          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+    207             _Port_Init();
+   \   000004                ; Setup parameters for call to function _Port_Init
+   \   000004   12....       LCALL   ??_Port_Init?relay
+    208             _Write_Data(PWR_MGMT_1, 0x00);        //解除休眠状态
+   \   000007                ; Setup parameters for call to function _Write_Data
+   \   000007   7A00         MOV     R2,#0x0
+   \   000009   796B         MOV     R1,#0x6b
+   \   00000B   12....       LCALL   ??_Write_Data?relay
+    209             _Write_Data(SMPLRT_DIV, 0x07);
+   \   00000E                ; Setup parameters for call to function _Write_Data
+   \   00000E   7A07         MOV     R2,#0x7
+   \   000010   7919         MOV     R1,#0x19
+   \   000012   12....       LCALL   ??_Write_Data?relay
+    210             _Write_Data(CONFIG, 0x06);
+   \   000015                ; Setup parameters for call to function _Write_Data
+   \   000015   7A06         MOV     R2,#0x6
+   \   000017   791A         MOV     R1,#0x1a
+   \   000019   12....       LCALL   ??_Write_Data?relay
+    211             _Write_Data(GYRO_CONFIG, 0x18);
+   \   00001C                ; Setup parameters for call to function _Write_Data
+   \   00001C   7A18         MOV     R2,#0x18
+   \   00001E   791B         MOV     R1,#0x1b
+   \   000020   12....       LCALL   ??_Write_Data?relay
+    212             _Write_Data(ACCEL_CONFIG, 0x01);
+   \   000023                ; Setup parameters for call to function _Write_Data
+   \   000023   7A01         MOV     R2,#0x1
+   \   000025   791C         MOV     R1,#0x1c
+   \   000027   12....       LCALL   ??_Write_Data?relay
+    213          }
+   \   00002A   02....       LJMP    ?Subroutine6 & 0xFFFF
+    214          
+    215          //****************************************
+    216          //整数转字符串
+    217          //****************************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    218          void lcd_printf(uint8 *s,int16 temp_data)
+   \                     lcd_printf:
+    219          {
+   \   000000   74F6         MOV     A,#-0xa
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 10
+   \   000005                ; Auto size: 0
+   \   000005   8A82         MOV     DPL,R2
+   \   000007   8B83         MOV     DPH,R3
+    220          	if(temp_data<0)
+   \   000009   C3           CLR     C
+   \   00000A   ED           MOV     A,R5
+   \   00000B   9400         SUBB    A,#0x0
+   \   00000D   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00000F   65D0         XRL     A,PSW
+   \   000011   33           RLC     A
+   \   000012   500F         JNC     ??lcd_printf_0
+    221          	{
+    222          		temp_data=-temp_data;
+   \   000014   C3           CLR     C
+   \   000015   E4           CLR     A
+   \   000016   9C           SUBB    A,R4
+   \   000017   F8           MOV     R0,A
+   \   000018   E4           CLR     A
+   \   000019   9D           SUBB    A,R5
+   \   00001A   F9           MOV     R1,A
+   \   00001B   E8           MOV     A,R0
+   \   00001C   FC           MOV     R4,A
+   \   00001D   E9           MOV     A,R1
+   \   00001E   FD           MOV     R5,A
+    223          		*s='-';
+   \   00001F   742D         MOV     A,#0x2d
+   \   000021   8002         SJMP    ??lcd_printf_1
+    224          	}
+    225          	else *s=' ';
+   \                     ??lcd_printf_0:
+   \   000023   7420         MOV     A,#0x20
+   \                     ??lcd_printf_1:
+   \   000025   F0           MOVX    @DPTR,A
+    226          
+    227          	*++s =temp_data/10000+0x30;
+   \   000026   A3           INC     DPTR
+   \   000027   EC           MOV     A,R4
+   \   000028   F8           MOV     R0,A
+   \   000029   ED           MOV     A,R5
+   \   00002A   F9           MOV     R1,A
+   \   00002B   7A10         MOV     R2,#0x10
+   \   00002D   7B27         MOV     R3,#0x27
+   \   00002F   12....       LCALL   ?S_DIV_MOD
+   \   000032   12....       LCALL   ?Subroutine2 & 0xFFFF
+    228          	temp_data=temp_data%10000;     //取余运算
+   \                     ??CrossCallReturnLabel_2:
+   \   000035   7A10         MOV     R2,#0x10
+   \   000037   7B27         MOV     R3,#0x27
+   \   000039   12....       LCALL   ?S_DIV_MOD
+   \   00003C   8A..         MOV     ?V0 + 0,R2
+   \   00003E   8B..         MOV     ?V0 + 1,R3
+   \   000040   AC..         MOV     R4,?V0 + 0
+   \   000042   AD..         MOV     R5,?V0 + 1
+    229          
+    230          	*++s =temp_data/1000+0x30;
+   \   000044   A3           INC     DPTR
+   \   000045   EC           MOV     A,R4
+   \   000046   F8           MOV     R0,A
+   \   000047   ED           MOV     A,R5
+   \   000048   F9           MOV     R1,A
+   \   000049   7AE8         MOV     R2,#-0x18
+   \   00004B   7B03         MOV     R3,#0x3
+   \   00004D   12....       LCALL   ?S_DIV_MOD
+   \   000050   12....       LCALL   ?Subroutine2 & 0xFFFF
+    231          	temp_data=temp_data%1000;     //取余运算
+   \                     ??CrossCallReturnLabel_3:
+   \   000053   7AE8         MOV     R2,#-0x18
+   \   000055   7B03         MOV     R3,#0x3
+   \   000057   12....       LCALL   ?S_DIV_MOD
+   \   00005A   8A..         MOV     ?V0 + 0,R2
+   \   00005C   8B..         MOV     ?V0 + 1,R3
+   \   00005E   AC..         MOV     R4,?V0 + 0
+   \   000060   AD..         MOV     R5,?V0 + 1
+    232          
+    233          	*++s =temp_data/100+0x30;
+   \   000062   A3           INC     DPTR
+   \   000063   EC           MOV     A,R4
+   \   000064   F8           MOV     R0,A
+   \   000065   ED           MOV     A,R5
+   \   000066   F9           MOV     R1,A
+   \   000067   7A64         MOV     R2,#0x64
+   \   000069   7B00         MOV     R3,#0x0
+   \   00006B   12....       LCALL   ?S_DIV_MOD
+   \   00006E   12....       LCALL   ?Subroutine2 & 0xFFFF
+    234          	temp_data=temp_data%100;     //取余运算
+   \                     ??CrossCallReturnLabel_4:
+   \   000071   7A64         MOV     R2,#0x64
+   \   000073   7B00         MOV     R3,#0x0
+   \   000075   12....       LCALL   ?S_DIV_MOD
+   \   000078   8A..         MOV     ?V0 + 0,R2
+   \   00007A   8B..         MOV     ?V0 + 1,R3
+   \   00007C   AC..         MOV     R4,?V0 + 0
+   \   00007E   AD..         MOV     R5,?V0 + 1
+    235          	*++s =temp_data/10+0x30;
+   \   000080   A3           INC     DPTR
+   \   000081   EC           MOV     A,R4
+   \   000082   F8           MOV     R0,A
+   \   000083   ED           MOV     A,R5
+   \   000084   F9           MOV     R1,A
+   \   000085   7A0A         MOV     R2,#0xa
+   \   000087   7B00         MOV     R3,#0x0
+   \   000089   12....       LCALL   ?S_DIV_MOD
+   \   00008C   E8           MOV     A,R0
+   \   00008D   2430         ADD     A,#0x30
+   \   00008F   F0           MOVX    @DPTR,A
+    236          	temp_data=temp_data%10;      //取余运算
+    237          	*++s =temp_data+0x30; 	
+   \   000090   A3           INC     DPTR
+   \   000091   EC           MOV     A,R4
+   \   000092   F8           MOV     R0,A
+   \   000093   ED           MOV     A,R5
+   \   000094   F9           MOV     R1,A
+   \   000095   7A0A         MOV     R2,#0xa
+   \   000097   7B00         MOV     R3,#0x0
+   \   000099   12....       LCALL   ?S_DIV_MOD
+   \   00009C   EA           MOV     A,R2
+   \   00009D   2430         ADD     A,#0x30
+   \   00009F   F0           MOVX    @DPTR,A
+    238          }
+   \   0000A0   7F02         MOV     R7,#0x2
+   \   0000A2   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   E8           MOV     A,R0
+   \   000001   2430         ADD     A,#0x30
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   EC           MOV     A,R4
+   \   000005   F8           MOV     R0,A
+   \   000006   ED           MOV     A,R5
+   \   000007   F9           MOV     R1,A
+   \   000008   22           RET
+    239          //**************************************
+    240          //合成数据
+    241          //**************************************
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+    242          int16 GetData(uint8 REG_Address)
+   \                     GetData:
+    243          {
+   \   000000   74F7         MOV     A,#-0x9
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 9
+   \   000005                ; Auto size: 0
+   \   000005   89..         MOV     ?V0 + 0,R1
+    244          	uint8 H,L;
+    245          	H=_Read_Data(REG_Address);
+   \   000007                ; Setup parameters for call to function _Read_Data
+   \   000007   12....       LCALL   ??_Read_Data?relay
+   \   00000A   E9           MOV     A,R1
+    246          	L=_Read_Data(REG_Address+1);
+    247          	return (H<<8)+L;   //合成数据
+   \   00000B   FF           MOV     R7,A
+   \   00000C                ; Setup parameters for call to function _Read_Data
+   \   00000C   7401         MOV     A,#0x1
+   \   00000E   25..         ADD     A,?V0 + 0
+   \   000010   F9           MOV     R1,A
+   \   000011   12....       LCALL   ??_Read_Data?relay
+   \   000014   E9           MOV     A,R1
+   \   000015   2400         ADD     A,#0x0
+   \   000017   FA           MOV     R2,A
+   \   000018   E4           CLR     A
+   \   000019   3F           ADDC    A,R7
+   \   00001A   FB           MOV     R3,A
+   \   00001B   02....       LJMP    ?Subroutine8 & 0xFFFF
+    248          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Start?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Start
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Stop?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Stop
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Port_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Port_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Wait_ACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Wait_ACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??sendACK?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    sendACK
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Write?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Write
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Read?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Read
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Write_Data?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Write_Data
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_Read_Data?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _Read_Data
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??_MPU_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    _MPU_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??lcd_printf?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    lcd_printf
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??GetData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    GetData
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     GetData              0      0      9
+       -> _Read_Data      0      0     18
+       -> _Read_Data      0      0     18
+     _MPU_Init            2      0      0
+       -> _Port_Init      4      0      0
+       -> _Write_Data     4      0      0
+       -> _Write_Data     4      0      0
+       -> _Write_Data     4      0      0
+       -> _Write_Data     4      0      0
+       -> _Write_Data     4      0      0
+     _Port_Init           0      0      0
+     _Read                0      0      9
+     _Read_Data           0      0     18
+       -> _Start          0      0     18
+       -> _Write          0      0     18
+       -> _Write          0      0     18
+       -> _Start          0      0     18
+       -> _Write          0      0     18
+       -> _Read           0      0     18
+       -> _Wait_ACK       0      0     18
+       -> _Stop           0      0     18
+     _Start               0      0      9
+     _Stop                0      0      9
+     _Wait_ACK            0      0      9
+     _Write               2      0      9
+       -> _Wait_ACK       4      0      0
+     _Write_Data          0      0      9
+       -> _Start          0      0     18
+       -> _Write          0      0     18
+       -> _Write          0      0     18
+       -> _Write          0      0     18
+       -> _Stop           0      0     18
+     lcd_printf           1      0     10
+     sendACK              0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label      Bytes
+     --------------      -----
+     _A_P0                  1
+     _A_P1                  1
+     P0DIR                  1
+     P1DIR                  1
+     _Start                16
+     ?Subroutine1           7
+     ?Subroutine5           5
+     ?Subroutine7         161
+     ??Subroutine9_0      160
+     ??Subroutine10_0       8
+     _Stop                173
+     _Port_Init             8
+     ?Subroutine4           9
+     _Wait_ACK             44
+     sendACK               18
+     ?Subroutine0           5
+     _Write                55
+     ?Subroutine6           7
+     _Read                355
+     _Write_Data          216
+     ?Subroutine8           5
+     ?Subroutine3          10
+     _Read_Data           231
+     _MPU_Init             45
+     lcd_printf           165
+     ?Subroutine2           9
+     GetData               30
+     ??_Start?relay         6
+     ??_Stop?relay          6
+     ??_Port_Init?relay     6
+     ??_Wait_ACK?relay      6
+     ??sendACK?relay        6
+     ??_Write?relay         6
+     ??_Read?relay          6
+     ??_Write_Data?relay    6
+     ??_Read_Data?relay     6
+     ??_MPU_Init?relay      6
+     ??lcd_printf?relay     6
+     ??GetData?relay        6
+
+ 
+ 1 742 bytes in segment BANKED_CODE
+    72 bytes in segment BANK_RELAYS
+     4 bytes in segment SFR_AN
+ 
+ 1 814 bytes of CODE memory
+     0 bytes of DATA memory (+ 4 bytes shared)
+
+Errors: none
+Warnings: none

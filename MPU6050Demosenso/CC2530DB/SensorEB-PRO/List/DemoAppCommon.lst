@@ -1,0 +1,313 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V7.51A/W32 for 8051                11/Jun/2014  19:08:35 #
+# Copyright 2004-2009 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\Source\ #
+#                          DemoAppCommon.c                                    #
+#    Command line       =  -f "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2 #
+#                          530DB\..\..\..\Tools\CC2530DB\f8wEndev.cfg"        #
+#                          (-DCPU32MHZ -DROOT=__near_func -DBLINK_LEDS) -f    #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\Tools\CC2530DB\f8wConfig.cfg"          #
+#                          (-DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR      #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFFF                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116 "-DCONST=const __code"    #
+#                          -DGENERIC=__generic -DRFD_RCVC_ALWAYS_ON=FALSE     #
+#                          -DPOLL_RATE=1000 -DQUEUED_POLL_RATE=100            #
+#                          -DRESPONSE_POLL_RATE=100) -DREJOIN_POLL_RATE=440   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\Source #
+#                          \DemoAppCommon.c" -D ZIGBEEPRO -D NWK_AUTO_POLL    #
+#                          -D REFLECTOR -D POWER_SAVING -D NV_INIT -D         #
+#                          NV_RESTORE -D DEVICE_LOGICAL_TYPE=ZG_DEVICETYPE_EN #
+#                          DDEVICE -D LCD_SUPPORTED -lC "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\SensorE #
+#                          B-PRO\List\" -lA "C:\Texas                         #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\SensorE #
+#                          B-PRO\List\" --diag_suppress Pe001,Pa010 -o        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\SensorEB-PRO\Obj\" -e --require_prototypes      #
+#                          --debug --core=plain --dptr=16,1                   #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0 #
+#                          \Projects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2 #
+#                          530DB\" -I "C:\Texas Instruments\ZStack-CC2530-2.3 #
+#                          .0-1.4.0\Projects\zstack\Samples\SensorDemoÇãÐ±½Ç+ #
+#                          GPRS\CC2530DB\..\SOURCE\" -I "C:\Texas             #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\ZMAIN\TI2530DB\" -I "C:\Texas                    #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\MT\" -I "C:\Texas               #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\HAL\INCLUDE\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\HAL\TARGET\CC2530EB\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\OSAL\MCU\CCSOC\" -I   #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\OSAL\INCLUDE\" -I     #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\AF\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\NWK\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\SEC\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\SAPI\" -I       #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\SYS\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\STACK\ZDO\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\ZMAC\F8W\" -I         #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\ZMAC\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\SERVICES\SADDR\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\SERVICES\SDATA\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\MAC\INCLUDE\" -I "C:\Texas      #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\MAC\HIGH_LEVEL\" -I "C:\Texas   #
+#                          Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zst #
+#                          ack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530DB\..\..\. #
+#                          .\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\" -I        #
+#                          "C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pr #
+#                          ojects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530 #
+#                          DB\..\..\..\..\..\COMPONENTS\MAC\LOW_LEVEL\srf04\S #
+#                          INGLE_CHIP\" -I "C:\Program Files\IAR              #
+#                          Systems\Embedded Workbench 5.3\8051\INC\" -I       #
+#                          "C:\Program Files\IAR Systems\Embedded Workbench   #
+#                          5.3\8051\INC\CLIB\" -Ohz                           #
+#    List file          =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530D #
+#                          B\SensorEB-PRO\List\DemoAppCommon.lst              #
+#    Object file        =  C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Pro #
+#                          jects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\CC2530D #
+#                          B\SensorEB-PRO\Obj\DemoAppCommon.r51               #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Texas Instruments\ZStack-CC2530-2.3.0-1.4.0\Projects\zstack\Samples\SensorDemoÇãÐ±½Ç+GPRS\Source\DemoAppCommon.c
+      1          /**************************************************************************************************
+      2            Filename:       DemoAppCommon.c
+      3           
+      4            Description:    Common functionality for the sensor demo application. 
+      5          
+      6          
+      7            Copyright 2009 Texas Instruments Incorporated. All rights reserved.
+      8          
+      9            IMPORTANT: Your use of this Software is limited to those specific rights
+     10            granted under the terms of a software license agreement between the user
+     11            who downloaded the software, his/her employer (which must be your employer)
+     12            and Texas Instruments Incorporated (the "License").  You may not use this
+     13            Software unless you agree to abide by the terms of the License. The License
+     14            limits your use, and you acknowledge, that the Software may not be modified,
+     15            copied or distributed unless embedded on a Texas Instruments microcontroller
+     16            or used solely and exclusively in conjunction with a Texas Instruments radio
+     17            frequency transceiver, which is integrated into your product.  Other than for
+     18            the foregoing purpose, you may not use, reproduce, copy, prepare derivative
+     19            works of, modify, distribute, perform, display or sell this Software and/or
+     20            its documentation for any purpose.
+     21          
+     22            YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
+     23            PROVIDED “AS IS?WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+     24            INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
+     25            NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
+     26            TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
+     27            NEGLIGENCE, STRICT LIABILITY, CONTRIBUTION, BREACH OF WARRANTY, OR OTHER
+     28            LEGAL EQUITABLE THEORY ANY DIRECT OR INDIRECT DAMAGES OR EXPENSES
+     29            INCLUDING BUT NOT LIMITED TO ANY INCIDENTAL, SPECIAL, INDIRECT, PUNITIVE
+     30            OR CONSEQUENTIAL DAMAGES, LOST PROFITS OR LOST DATA, COST OF PROCUREMENT
+     31            OF SUBSTITUTE GOODS, TECHNOLOGY, SERVICES, OR ANY CLAIMS BY THIRD PARTIES
+     32            (INCLUDING BUT NOT LIMITED TO ANY DEFENSE THEREOF), OR OTHER SIMILAR COSTS.
+     33          
+     34            Should you have any questions regarding your right to use this Software,
+     35            contact Texas Instruments Incorporated at www.TI.com.
+     36          **************************************************************************************************/
+     37          
+     38          /******************************************************************************
+     39           * INCLUDES
+     40           */
+     41          #include "hal_uart.h"
+     42          #include "DemoApp.h"
+     43          
+     44          
+     45          /******************************************************************************
+     46           * FUNCTIONS
+     47           */
+     48          
+     49          /******************************************************************************
+     50           * @fn          initUart
+     51           *
+     52           * @brief       Initialise UART 
+     53           *
+     54           * @param       pf - Function pointer to UART callback function
+     55           *              
+     56           * @return      none
+     57           */
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     58          void initUart(halUARTCBack_t pf)
+   \                     initUart:
+     59          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 29
+   \   000004   74E3         MOV     A,#-0x1d
+   \   000006   12....       LCALL   ?ALLOC_XSTACK8
+     60            halUARTCfg_t uartConfig;
+     61            
+     62            uartConfig.configured           = TRUE;              
+   \   000009   7401         MOV     A,#0x1
+   \   00000B   85..82       MOV     DPL,?XSP + 0
+   \   00000E   85..83       MOV     DPH,?XSP + 1
+   \   000011   F0           MOVX    @DPTR,A
+     63            uartConfig.baudRate             = HAL_UART_BR_9600;
+   \   000012   12....       LCALL   ?XSTACK_DISP0_8
+   \   000015   E4           CLR     A
+   \   000016   F0           MOVX    @DPTR,A
+     64            uartConfig.flowControl          = FALSE;
+   \   000017   7402         MOV     A,#0x2
+   \   000019   12....       LCALL   ?XSTACK_DISP0_8
+   \   00001C   E4           CLR     A
+   \   00001D   F0           MOVX    @DPTR,A
+     65            uartConfig.flowControlThreshold = 48;
+   \   00001E   7403         MOV     A,#0x3
+   \   000020   12....       LCALL   ?XSTACK_DISP0_8
+   \   000023   7430         MOV     A,#0x30
+   \   000025   F0           MOVX    @DPTR,A
+   \   000026   A3           INC     DPTR
+   \   000027   E4           CLR     A
+   \   000028   F0           MOVX    @DPTR,A
+     66            uartConfig.rx.maxBufSize        = RX_BUF_LEN;
+   \   000029   740A         MOV     A,#0xa
+   \   00002B   12....       LCALL   ?XSTACK_DISP0_8
+   \   00002E   7480         MOV     A,#-0x80
+   \   000030   F0           MOVX    @DPTR,A
+   \   000031   A3           INC     DPTR
+   \   000032   E4           CLR     A
+   \   000033   F0           MOVX    @DPTR,A
+     67            uartConfig.tx.maxBufSize        = 128;
+   \   000034   7412         MOV     A,#0x12
+   \   000036   12....       LCALL   ?XSTACK_DISP0_8
+   \   000039   7480         MOV     A,#-0x80
+   \   00003B   F0           MOVX    @DPTR,A
+   \   00003C   A3           INC     DPTR
+   \   00003D   E4           CLR     A
+   \   00003E   F0           MOVX    @DPTR,A
+     68            
+     69            uartConfig.idleTimeout          = 6;   
+   \   00003F   7405         MOV     A,#0x5
+   \   000041   12....       LCALL   ?XSTACK_DISP0_8
+   \   000044   7406         MOV     A,#0x6
+   \   000046   F0           MOVX    @DPTR,A
+     70            uartConfig.intEnable            = TRUE;              
+   \   000047   7416         MOV     A,#0x16
+   \   000049   12....       LCALL   ?XSTACK_DISP0_8
+   \   00004C   7401         MOV     A,#0x1
+   \   00004E   F0           MOVX    @DPTR,A
+     71            uartConfig.callBackFunc         = pf;
+   \   00004F   741B         MOV     A,#0x1b
+   \   000051   12....       LCALL   ?XSTACK_DISP0_8
+   \   000054   EA           MOV     A,R2
+   \   000055   F0           MOVX    @DPTR,A
+   \   000056   A3           INC     DPTR
+   \   000057   EB           MOV     A,R3
+   \   000058   F0           MOVX    @DPTR,A
+     72            
+     73            HalUARTOpen (HAL_UART_PORT_0, &uartConfig);
+   \   000059                ; Setup parameters for call to function HalUARTOpen
+   \   000059   85..82       MOV     DPL,?XSP + 0
+   \   00005C   85..83       MOV     DPH,?XSP + 1
+   \   00005F   AA82         MOV     R2,DPL
+   \   000061   AB83         MOV     R3,DPH
+   \   000063   7900         MOV     R1,#0x0
+   \   000065   12....       LCALL   ??HalUARTOpen?relay
+     74          }
+   \   000068   741D         MOV     A,#0x1d
+   \   00006A   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00006D   D083         POP     DPH
+   \   00006F   D082         POP     DPL
+   \   000071   02....       LJMP    ?BRET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??initUart?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    initUart
+     75          
+     76          
+
+   Maximum stack usage in bytes:
+
+     Function         ISTACK PSTACK XSTACK
+     --------         ------ ------ ------
+     initUart             3      0     29
+       -> HalUARTOpen     4      0     58
+
+
+   Segment part sizes:
+
+     Function/Label   Bytes
+     --------------   -----
+     initUart          116
+     ??initUart?relay    6
+
+ 
+ 116 bytes in segment BANKED_CODE
+   6 bytes in segment BANK_RELAYS
+ 
+ 122 bytes of CODE memory
+
+Errors: none
+Warnings: none
